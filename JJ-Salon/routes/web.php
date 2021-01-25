@@ -16,4 +16,4 @@ Route::get('/', function () {
 });
 
 // this is how they use routes in laravel 5.8.*
-Route::get('/test', 'TestController@index')->name('test');
+// Route::get('/test', 'TestController@index')->name('test');
