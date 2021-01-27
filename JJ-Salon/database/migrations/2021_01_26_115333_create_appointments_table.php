@@ -15,8 +15,11 @@ class CreateAppointmentsTable extends Migration
     {
         Schema::create('appointments', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->stirng('menuofservices');
+            $table->unsignedBigInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('users');
+            $table->string('menuofservices');
             $table->integer('price');
+            $table->date('bookAppointment')->nullable();
             $table->timestamps();
         });
     }

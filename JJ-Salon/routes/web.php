@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\UserAppointment\UserController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -32,3 +33,9 @@ Route::get('/admin', function(){
 Route::namespace('Admin')->prefix('admin')->middleware(['auth', 'auth.admin'])->name('admin.')->group(function(){
   Route::resource('/users', 'UserController', ['except' => ['show', 'create', 'store']] );
 });
+
+// Route::namespace('UserAppointment')->prefix('user')->name('user.')->group(function(){
+//   Route::get('/show', 'UserController')->name('user');
+// });
+
+Route::get('/userPage', 'UserAppointment\UserController@index')->name('userPage');
