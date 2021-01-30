@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\UserAppointment\UserController;
+use App\Http\Controllers\User\AppointmentController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,6 +15,7 @@ use App\Http\Controllers\UserAppointment\UserController;
 */
 
 Route::get('/', function () {
+
     return view('welcome');
 });
 
@@ -38,4 +41,10 @@ Route::namespace('Admin')->prefix('admin')->middleware(['auth', 'auth.admin'])->
 //   Route::get('/show', 'UserController')->name('user');
 // });
 
-Route::get('/userPage', 'UserAppointment\UserController@index')->name('userPage');
+
+
+
+
+// this is the Appointment controller
+
+Route::get('/appointments', 'User\AppointmentController@index');

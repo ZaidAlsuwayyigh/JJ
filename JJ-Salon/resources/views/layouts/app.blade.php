@@ -18,6 +18,7 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ mix('css/app.css') }}" rel="stylesheet">
 </head>
 <body>
     <div id="app">
@@ -39,6 +40,12 @@
                           <a href="{{route('admin.users.index')}}">Manage Users</a>
 
                       </li>
+                      @endhasrole
+
+                      @hasrole('user')
+
+                    
+
                       @endhasrole
                     </ul>
 

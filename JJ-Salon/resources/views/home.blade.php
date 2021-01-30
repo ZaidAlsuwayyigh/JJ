@@ -14,7 +14,29 @@
                         </div>
                     @endif
 
-                    You are logged in!
+
+
+
+
+
+
+                    @if(Auth()->user()->name == 'admin')
+
+                    <h1>You are an admin!</h1>
+
+
+
+                    @else
+
+
+                    <h1>Hello, {{auth()->user()->name}}</h1>
+
+                    <p>To view you appointments, please click  <a href="/appointments">HERE</a> </p>
+
+
+                    @endif
+
+
                 </div>
             </div>
         </div>
